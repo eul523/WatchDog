@@ -10,3 +10,4 @@ class User(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     name: Mapped[str] = mapped_column(nullable=False)
     email: Mapped[str] = mapped_column(nullable=False, unique=True)
+    monitors: Mapped[List['Monitor']] = relationship(back_populates='user')
